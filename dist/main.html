@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Folder Fiddler</title>
+    <link rel="stylesheet" href="./css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
+     <div style="margin:3px" class="columns">
+       <ul id="dir-list" class="column is-gapless">
+          <nav class="panel">
+              <p class="panel-heading" style="font-weight:bold;font-size:0.85em;text-align:center;">
+                  <span id='dir-list-title'>Drives</span> 
+                  <span id="dir-list-back" class="is-pulled-right is-invisible" style="cursor: pointer;" onclick="goBack()">
+                    <i class="fas fa-chevron-circle-left"></i>
+                  </span>
+              </p>
+              <p class="panel-tabs">
+                  <a class="is-active">all</a>
+                  <a>local</a>
+                  <a>Networked</a>
+              </p>
+              <div id="dir-items" style="max-height:450px;overflow:auto;">
+
+              </div>
+              <div id="selectBtnContainer" class="panel-block is-invisible">
+                  <button onclick="sortFolder()" class="button is-link is-outlined is-fullwidth">
+                    Sort Selected Folder
+                  </button>
+                </div>
+          </nav>
+       </ul>
+       <ul id="dir-output" class="column">
+
+        </ul>
+        <ul id="dir-output" class="column">
+
+        </ul>
+     </div>
+    <script src="./js/app.js"></script>
+    <script>
+      //IIFE to fetch initial dir
+      (()=>{
+        try{
+          fetchDrives();
+        }catch(err){
+          console.log("err from main fetch drive function");
+        }
+      })()
+    </script>
+    <script>
+      // You can also require other files to run in this process
+      require('./js/app.js');
+    </script>
+  </body>
+</html>

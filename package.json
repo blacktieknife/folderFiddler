@@ -1,22 +1,18 @@
 {
-  "name": "electron-quick-start",
+  "name": "folddler",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "find a folder and make sub folders",
   "main": "main.js",
   "scripts": {
+    "electron-rebuild": "electron-rebuild -f -s",
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Dustin Erickson",
   "devDependencies": {
-    "electron": "^2.0.0"
+    "electron-rebuild": "^1.7.3",
+    "electron": "^2.0.1"
+  },
+  "dependencies": {
+    "drivelist": "^6.2.2"
   }
 }
